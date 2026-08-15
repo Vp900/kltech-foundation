@@ -27,7 +27,19 @@ const baseSchema = z.object({
   message: z.string().trim().min(10, { message: "Please describe your requirement (min 10 characters)" }).max(2000),
 });
 
-type Errors = Partial<Record<string, string>>;
+type FieldName =
+  | "name"
+  | "email"
+  | "phone"
+  | "company"
+  | "service"
+  | "budget"
+  | "timeline"
+  | "website"
+  | "contactMethod"
+  | "message";
+
+type Errors = { [K in FieldName]?: string | undefined };
 
 function Field({
   id,
@@ -38,8 +50,8 @@ function Field({
 }: {
   id: string;
   label: string;
-  required?: boolean;
-  error?: string;
+  required?: boolean | undefined;
+  error?: string | undefined;
   children: React.ReactNode;
 }) {
   return (
@@ -77,7 +89,7 @@ export function LeadForm({
     const parsed = baseSchema.safeParse(data);
     if (!parsed.success) {
       const next: Errors = {};
-      for (const issue of parsed.error.issues) next[String(issue.path[0])] = issue.message;
+      for (const issue of parsed.error.issues) next[issue.path[0] as FieldName] = issue.message;
       setErrors(next);
       return;
     }
