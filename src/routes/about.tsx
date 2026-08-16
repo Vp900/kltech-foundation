@@ -1,10 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CTASection, Icon, InfoNotice, PageHero, SectionHeading } from "@/components/site/Sections";
+import { CTASection, Icon, SectionHeading } from "@/components/site/Sections";
+import { TeamSection } from "@/components/site/TeamSection";
 import { whyChooseUs } from "@/data/site";
+import heroImage from "@/assets/hero-dashboard.jpg";
+import { Sparkles } from "lucide-react";
 
-const title = "About KLTech Solutions — Our Mission, Vision & Expertise";
+const title = "About KL Tech Solutions — Our Mission, Leadership & Engineering Team";
 const description =
-  "Learn about KLTech Solutions: who we are, our mission and vision, how we work and the technology expertise we bring to every project.";
+  "Learn about KL Tech Solutions: our founders, executive leadership team, engineering talent, mission, vision, and core values.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -24,77 +27,104 @@ export const Route = createFileRoute("/about")({
 const pillars = [
   {
     title: "Our Mission",
-    text: "Make dependable, well-built technology accessible to businesses of every size — with clear scope, honest timelines and no jargon.",
+    text: "Make dependable, enterprise-grade web technology accessible to businesses of every size with clear scope, honest timelines, and robust engineering.",
   },
   {
     title: "Our Vision",
-    text: "Become a long-term technology partner that businesses return to as they grow, not a one-off vendor.",
+    text: "Become a trusted long-term technology partner that enterprises rely on as they expand, innovate, and automate.",
   },
   {
     title: "Our Values",
-    text: "Transparency, quality-first engineering, honest communication and accountability after launch.",
+    text: "Transparency, quality-first code, user-centric design, and 24/7 post-launch engineering support.",
   },
 ];
 
 function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="About Us"
-        title="A technology partner, not just a vendor"
-        text="KLTech Solutions builds websites, applications and business software with a focus on clarity, quality and long-term maintainability."
-      />
+      {/* Reduced Height 2-Column Hero Section with Image */}
+      <section className="relative overflow-hidden bg-slate-950 text-white py-12 lg:py-16">
+        <div className="absolute top-0 right-0 size-[28rem] rounded-full bg-emerald-500/15 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 size-[28rem] rounded-full bg-sky-500/15 blur-3xl pointer-events-none" />
+
+        <div className="container-page relative grid items-center gap-8 lg:grid-cols-2">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-400 mb-3">
+              <Sparkles className="size-3.5" />
+              <span>About KL Tech Solutions</span>
+            </div>
+            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight font-display">
+              A Technology Partner Dedicated to <span className="bg-gradient-to-r from-emerald-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">Innovation</span>
+            </h1>
+            <p className="mt-3 text-slate-300 text-xs sm:text-sm max-w-lg leading-relaxed">
+              KL Tech Solutions builds high-performance web applications, cloud systems, and custom software with a focus on clarity, scale, and long-term security.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-slate-300 font-medium border-t border-slate-800/80 pt-5">
+              <div className="flex items-center gap-1.5">
+                <span className="size-2 rounded-full bg-emerald-400" />
+                <span>100% Transparency</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="size-2 rounded-full bg-sky-400" />
+                <span>Agile Engineering</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="size-2 rounded-full bg-indigo-400" />
+                <span>24/7 Support Included</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-emerald-500 to-sky-500 opacity-20 blur-xl" />
+            <img
+              src={heroImage}
+              width={1280}
+              height={960}
+              alt="KL Tech Solutions engineering and software development team dashboard"
+              className="relative w-full rounded-3xl border border-slate-800 shadow-2xl object-cover"
+            />
+          </div>
+        </div>
+      </section>
 
       <section className="section-y">
         <div className="container-page">
-          <SectionHeading align="left" eyebrow="Who we are" title="Engineering-led, business-focused" />
-          <p className="lead-text mt-6 max-w-3xl text-muted-foreground">
-            We work with businesses, startups, organizations and individuals to plan, design, build and support digital
-            products. Every engagement starts with understanding your operations, then choosing the simplest technology
-            that solves the problem well.
+          <SectionHeading align="left" eyebrow="Who We Are" title="Engineering-Led, Business-Focused" />
+          <p className="lead-text mt-6 max-w-3xl text-slate-600 dark:text-slate-400">
+            We collaborate with startups, growing mid-market enterprises, and global brands to design, engineer, and deploy digital products. Every project starts with understanding your business goals and implementing scalable full-stack web solutions.
           </p>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {pillars.map((p) => (
               <article key={p.title} className="card-surface p-7">
-                <h3 className="font-display text-lg font-semibold">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
+                <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{p.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-y bg-surface">
+      {/* Leadership & Engineering Team */}
+      <TeamSection />
+
+      <section className="section-y bg-slate-50 dark:bg-slate-900/50">
         <div className="container-page">
-          <SectionHeading eyebrow="Why clients trust us" title="How we work" />
+          <SectionHeading eyebrow="Why Clients Trust Us" title="Our Core Engineering Principles" />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {whyChooseUs.map((w) => (
               <article key={w.title} className="card-surface p-6">
-                <Icon name={w.icon} className="size-6 text-primary" />
-                <h3 className="mt-4 font-display text-lg font-semibold">{w.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{w.text}</p>
+                <Icon name={w.icon} className="size-6 text-emerald-500" />
+                <h3 className="mt-4 font-display text-lg font-bold text-slate-900 dark:text-white">{w.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{w.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-y">
-        <div className="container-page space-y-8">
-          <SectionHeading eyebrow="Our team" title="The people behind KLTech" />
-          <InfoNotice>
-            <strong className="text-foreground">Team profiles pending.</strong> Share real names, photographs,
-            designations, short bios and LinkedIn links and we will publish the team section. No placeholder people are
-            shown.
-          </InfoNotice>
-          <InfoNotice>
-            <strong className="text-foreground">Certifications & partnerships pending.</strong> Only genuine
-            certifications, partnerships and registration details will be published.
-          </InfoNotice>
-        </div>
-      </section>
-
-      <CTASection title="Work with us" text="Tell us about your business and we'll suggest a practical way forward." primaryLabel="Get a Quote" secondaryLabel="Contact Us" />
+      <CTASection title="Partner with KL Tech Solutions" text="Tell us about your business goals and we will present a tailored tech strategy." primaryLabel="Get a Free Quote" secondaryLabel="Contact Us" />
     </>
   );
 }
+

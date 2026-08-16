@@ -19,11 +19,10 @@ const serviceSlugs = [
 ];
 
 const primaryLinks = [
-  { to: "/industries", label: "Industries" },
   { to: "/portfolio", label: "Our Work" },
   { to: "/technologies", label: "Technologies" },
-  { to: "/about", label: "About" },
-  { to: "/blog", label: "Resources" },
+  { to: "/industries", label: "Industries" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
 function DropdownNav({ label, slugs }: { label: string; slugs: string[] }) {
@@ -37,24 +36,23 @@ function DropdownNav({ label, slugs }: { label: string; slugs: string[] }) {
         {label}
         <ChevronDown className="size-4 transition-transform group-hover:rotate-180" aria-hidden="true" />
       </button>
-      <div className="invisible absolute left-0 top-full z-50 w-72 translate-y-1 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-        <ul className="mt-2 rounded-xl border border-border bg-card p-2 shadow-[var(--shadow-lift)]">
+      <div className="invisible absolute left-0 top-full z-50 w-64 translate-y-1 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+        <ul className="mt-2 rounded-xl border border-slate-800 bg-slate-900 p-2 shadow-2xl">
           {items.map((item) => (
             <li key={item.slug}>
               <Link
                 to="/services/$slug"
                 params={{ slug: item.slug }}
-                className="block rounded-lg px-3 py-2 transition-colors hover:bg-secondary"
+                className="block rounded-lg px-3 py-2 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800 hover:text-emerald-400"
               >
-                <span className="block text-sm font-semibold text-foreground">{item.name}</span>
-                <span className="block text-xs text-muted-foreground">{item.short}</span>
+                {item.name}
               </Link>
             </li>
           ))}
           <li>
             <Link
               to="/services"
-              className="block rounded-lg px-3 py-2 text-sm font-semibold text-primary transition-colors hover:bg-secondary"
+              className="block rounded-lg px-3 py-2 text-sm font-semibold text-emerald-400 transition-colors hover:bg-slate-800"
             >
               View all services →
             </Link>
@@ -99,10 +97,17 @@ export function Header() {
           <Link
             to="/"
             className="rounded-md px-3 py-2 text-sm font-medium text-ink-soft transition-colors hover:text-ink-foreground"
-            activeProps={{ className: "text-ink-foreground" }}
+            activeProps={{ className: "text-ink-foreground font-semibold" }}
             activeOptions={{ exact: true }}
           >
             Home
+          </Link>
+          <Link
+            to="/about"
+            className="rounded-md px-3 py-2 text-sm font-medium text-ink-soft transition-colors hover:text-ink-foreground"
+            activeProps={{ className: "text-ink-foreground font-semibold" }}
+          >
+            About Us
           </Link>
           <DropdownNav label="Services" slugs={serviceSlugs} />
           <DropdownNav label="Solutions" slugs={solutionSlugs} />
@@ -111,7 +116,7 @@ export function Header() {
               key={l.to}
               to={l.to}
               className="rounded-md px-3 py-2 text-sm font-medium text-ink-soft transition-colors hover:text-ink-foreground"
-              activeProps={{ className: "text-ink-foreground" }}
+              activeProps={{ className: "text-ink-foreground font-semibold" }}
             >
               {l.label}
             </Link>
@@ -119,8 +124,8 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button asChild size="lg" className="rounded-lg">
-            <Link to="/get-a-quote">Get a Quote</Link>
+          <Button asChild size="lg" className="rounded-xl bg-emerald-500 hover:bg-emerald-600 font-bold text-white shadow-md">
+            <Link to="/contact">Get Free Quote</Link>
           </Button>
         </div>
 
@@ -131,7 +136,7 @@ export function Header() {
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
         >
-          {open ? <Menu className="size-5" /> : <Menu className="size-5" />}
+          {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
       </div>
 
@@ -140,13 +145,12 @@ export function Header() {
           <nav className="container-page flex flex-col gap-1 py-6" aria-label="Mobile navigation">
             {[
               { to: "/", label: "Home" },
+              { to: "/about", label: "About Us" },
               { to: "/services", label: "Services" },
               { to: "/solutions", label: "Solutions" },
-              { to: "/industries", label: "Industries" },
-              { to: "/portfolio", label: "Our Work" },
+              { to: "/portfolio", label: "Our Work & Clients" },
               { to: "/technologies", label: "Technologies" },
-              { to: "/about", label: "About" },
-              { to: "/blog", label: "Resources" },
+              { to: "/industries", label: "Industries" },
               { to: "/contact", label: "Contact" },
             ].map((l) => (
               <Link
@@ -158,21 +162,15 @@ export function Header() {
                 {l.label}
               </Link>
             ))}
-            <Button asChild size="lg" className="mt-4 rounded-lg">
-              <Link to="/get-a-quote" onClick={() => setOpen(false)}>
-                Get a Quote
+            <Button asChild size="lg" className="mt-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 font-bold text-white">
+              <Link to="/contact" onClick={() => setOpen(false)}>
+                Get Free Quote
               </Link>
             </Button>
-            <button
-              type="button"
-              onClick={() => setOpen(false)}
-              className="mt-3 inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm text-ink-soft"
-            >
-              <X className="size-4" /> Close
-            </button>
           </nav>
         </div>
       ) : null}
+
     </header>
   );
 }

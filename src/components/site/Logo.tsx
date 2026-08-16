@@ -1,25 +1,30 @@
-/**
- * Placeholder wordmark. Replace with the official KLTech Solutions logo file
- * once the client supplies it.
- */
-export function Logo({ variant = "light" }: { variant?: "light" | "dark" }) {
+export function Logo({
+  variant = "light",
+  showTagline = false,
+  className = "",
+  size = "md",
+}: {
+  variant?: "light" | "dark";
+  showTagline?: boolean;
+  className?: string;
+  size?: "sm" | "md" | "lg";
+}) {
+  const heightClass =
+    size === "sm"
+      ? "h-9"
+      : size === "lg"
+      ? "h-14 sm:h-16"
+      : "h-11 sm:h-12";
+
   return (
-    <span className="inline-flex items-center gap-2.5">
-      <span
-        className="grid size-9 place-items-center rounded-lg bg-primary font-display text-base font-bold text-primary-foreground"
-        aria-hidden="true"
-      >
-        K
-      </span>
-      <span
-        className={
-          variant === "light"
-            ? "font-display text-lg font-bold tracking-tight text-ink-foreground"
-            : "font-display text-lg font-bold tracking-tight text-foreground"
-        }
-      >
-        KLTech <span className="text-cyan">Solutions</span>
-      </span>
-    </span>
+    <div className={`inline-flex items-center gap-2 group ${className}`}>
+      <img
+        src="/kts-logo.jpg"
+        alt="KL Tech Solutions Logo"
+        className={`${heightClass} w-auto object-contain rounded-xl shadow-md ring-1 ring-slate-900/10 transition-transform duration-300 group-hover:scale-105`}
+      />
+    </div>
   );
 }
+
+

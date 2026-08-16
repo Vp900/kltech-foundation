@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="logoArcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="50%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="logoKGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80" />
+      <stop offset="100%" stop-color="#16a34a" />
+    </linearGradient>
+    <linearGradient id="logoTGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="logoSGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+  </defs>
+
+  <path d="M 22,50 C 12,35 20,15 50,10 C 72,6 88,18 92,30 C 93,33 89,35 87,33 C 83,24 70,14 50,17 C 22,21 19,41 28,50 Z" fill="url(#logoArcGrad)"/>
+  <path d="M 32,78 C 52,87 76,78 88,62 C 90,59 93,61 91,64 C 80,82 55,90 30,80 Z" fill="url(#logoArcGrad)"/>
+  <path d="M 24,28 L 30,28 L 30,70 L 24,70 Z M 30,49 L 46,28 L 54,28 L 39,49 L 56,70 L 48,70 Z" fill="url(#logoKGrad)"/>
+  <path d="M 50,28 L 70,28 L 70,34 L 63,34 L 63,70 L 57,70 L 57,34 L 50,34 Z" fill="url(#logoTGrad)"/>
+  <path d="M 86,34 C 81,29 74,28 69,32 C 65,35 67,41 72,43 L 76,45 C 83,47 85,53 81,58 C 76,64 68,63 64,58 L 68,54 C 71,58 76,59 79,55 C 81,52 79,49 75,47 L 70,45 C 64,43 62,36 66,31 C 72,25 81,26 86,31 Z" fill="url(#logoSGrad)"/>
+</svg>

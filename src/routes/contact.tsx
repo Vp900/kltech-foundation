@@ -23,52 +23,81 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
+import { Sparkles } from "lucide-react";
+import contactHero from "@/assets/contact-hero.jpg";
+
 function ContactPage() {
   const details = [
-    { icon: Phone, label: "Phone", value: company.phone },
+    { icon: Phone, label: "Phone Support", value: company.phone },
     { icon: MessageCircle, label: "WhatsApp", value: company.whatsapp },
-    { icon: Mail, label: "Email", value: company.email },
-    { icon: MapPin, label: "Office Address", value: company.address },
-    { icon: Clock, label: "Business Hours", value: company.hours },
+    { icon: Mail, label: "Email Support", value: company.email },
+    { icon: MapPin, label: "Location", value: company.address },
+    { icon: Clock, label: "Support Hours", value: company.hours },
   ];
 
   return (
     <>
-      <PageHero
-        eyebrow="Contact"
-        title="Let's talk about your project"
-        text="Send us your requirement and our team will get back to you with next steps."
-      />
+      {/* Rich 2-Column Hero Section for Contact Page */}
+      <section className="relative bg-slate-950 text-white pt-12 pb-16 lg:py-20 border-b border-slate-800 overflow-hidden">
+        <div className="absolute top-0 right-1/4 size-96 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
+        <div className="container-page relative grid lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-6 space-y-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-semibold">
+              <MessageCircle className="size-3.5" />
+              <span>Get in Touch with Our Engineering Team</span>
+            </div>
+            <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white leading-tight">
+              Let's Talk About Your Next Software Project
+            </h1>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-lg">
+              Send us your project scope or schedule a call. Our tech leads will provide a detailed technical consultation, timeline, and proposal.
+            </p>
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <div className="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-emerald-400 flex items-center gap-2">
+                <div className="size-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Response Time: &lt; 2 Hours</span>
+              </div>
+              <div className="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-sky-400 flex items-center gap-2">
+                <Sparkles className="size-4" />
+                <span>Free Initial Architecture Review</span>
+              </div>
+            </div>
+          </div>
 
-      <section className="section-y">
+          <div className="lg:col-span-6 relative">
+            <img
+              src={contactHero}
+              alt="KL Tech Customer & Technical Support Desk"
+              className="w-full rounded-3xl border border-slate-800 shadow-2xl object-cover max-h-[380px]"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y bg-slate-50 dark:bg-slate-950/60">
         <div className="container-page grid gap-10 lg:grid-cols-[1fr_1.4fr]">
           <div className="space-y-6">
-            <h2 className="font-display text-xl font-semibold">Contact information</h2>
+            <h2 className="font-display text-xl font-bold text-slate-900 dark:text-white">Direct Contact Info</h2>
             <ul className="space-y-4">
               {details.map((d) => (
-                <li key={d.label} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
-                  <d.icon className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
+                <li key={d.label} className="flex items-start gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm">
+                  <d.icon className="mt-0.5 size-5 shrink-0 text-emerald-500" aria-hidden="true" />
                   <div>
-                    <p className="text-sm font-semibold">{d.label}</p>
-                    <p className="text-sm text-muted-foreground">{d.value || "Pending client confirmation"}</p>
+                    <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">{d.label}</p>
+                    <p className="text-sm font-bold text-slate-900 dark:text-white mt-0.5">{d.value}</p>
                   </div>
                 </li>
               ))}
             </ul>
-            <InfoNotice>
-              Phone, WhatsApp, email, address, business hours, social links and the Google Map embed will go live as
-              soon as you share the real details.
-            </InfoNotice>
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-semibold">Send an enquiry</h2>
-            <div className="mt-5">
-              <LeadForm variant="contact" submitLabel="Send Enquiry" />
-            </div>
+            <h2 className="font-display text-xl font-bold text-slate-900 dark:text-white mb-4">Send an Enquiry (Synced to Google Sheet)</h2>
+            <LeadForm variant="contact" submitLabel="Submit Enquiry to Google Sheet" />
           </div>
         </div>
       </section>
     </>
   );
 }
+

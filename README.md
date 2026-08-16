@@ -2566,16 +2566,6 @@ After implementation, perform a complete desktop, tablet, mobile, SEO, accessibi
 
 The final website must be production-ready and suitable for presenting KLTech Solutions to real clients.
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/d61e5f39-d8e2-4c76-813e-31a8b7682319).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
 ## Development
 
 Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).

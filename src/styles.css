@@ -150,10 +150,10 @@
 }
 
 @utility section-y {
-  padding-block: 4.5rem;
+  padding-block: 2.75rem;
 
   @media (min-width: 768px) {
-    padding-block: 6.5rem;
+    padding-block: 4rem;
   }
 }
 
@@ -175,16 +175,17 @@
 }
 
 @utility h1-display {
-  font-size: clamp(2.25rem, 5.2vw, 4.5rem);
-  line-height: 1.04;
-  font-weight: 700;
+  font-size: clamp(1.875rem, 3.8vw, 3rem);
+  line-height: 1.1;
+  font-weight: 800;
 }
 
 @utility h2-display {
-  font-size: clamp(1.875rem, 3.4vw, 3rem);
-  line-height: 1.12;
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  line-height: 1.15;
   font-weight: 700;
 }
+
 
 @utility h3-display {
   font-size: clamp(1.25rem, 1.9vw, 1.75rem);
@@ -216,6 +217,45 @@
   }
 }
 
+@utility animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+@utility animate-marquee-reverse {
+  animation: marquee-reverse 35s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+
+  &:is(.dark *) {
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+  }
+}
+
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -225,4 +265,5 @@
     scroll-behavior: auto !important;
   }
 }
+
 
