@@ -13,6 +13,8 @@ import { ProjectBuilder } from "@/components/site/Forms";
 import { ClientSlider } from "@/components/site/ClientSlider";
 import { TechStack } from "@/components/site/TechStack";
 import { Testimonials } from "@/components/site/Testimonials";
+import { InfrastructureTicker } from "@/components/site/InfrastructureTicker";
+import { ProjectCostEstimator } from "@/components/site/ProjectCostEstimator";
 import {
   featuredServices,
   generalFaqs,
@@ -22,9 +24,9 @@ import {
   whyChooseUs,
 } from "@/data/site";
 
-const title = "KL Tech Solutions — IT Services, Software & Web Development Company";
+const title = "SVM IT Solutions — IT Services, Software & Web Development Company";
 const description =
-  "KL Tech Solutions builds high-performance websites, web applications, mobile apps, ERP, CRM and custom software for businesses, startups and organizations.";
+  "SVM IT Solutions builds high-performance websites, web applications, mobile apps, ERP, CRM and custom software for businesses, startups and organizations.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,7 +46,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "KL Tech Solutions",
+          name: "SVM IT Solutions",
           description,
           url: "/",
         }),
@@ -58,20 +60,20 @@ function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-slate-950 text-white py-14 lg:py-20">
-        <div className="absolute top-0 right-0 size-[32rem] rounded-full bg-emerald-500/15 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 size-[32rem] rounded-full bg-sky-500/15 blur-3xl pointer-events-none" />
+      <section className="relative overflow-hidden bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-white py-14 lg:py-20">
+        <div className="absolute top-0 right-0 size-[32rem] rounded-full bg-emerald-500/20 dark:bg-emerald-500/15 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 size-[32rem] rounded-full bg-sky-500/20 dark:bg-sky-500/15 blur-3xl pointer-events-none" />
 
         <div className="container-page relative grid items-center gap-10 lg:grid-cols-2">
-          <div className="reveal">
+          <div className="reveal text-slate-900 dark:text-white">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-400 mb-4">
               <Sparkles className="size-3.5" />
               <span>INNOVATE • DEVELOP • DELIVER</span>
             </div>
-            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight font-display">
-              Build Better. Grow Faster with <span className="bg-gradient-to-r from-emerald-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">KL Tech Solutions</span>.
+            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight font-display">
+              Build Better. Grow Faster with <span className="bg-gradient-to-r from-emerald-600 via-sky-500 to-blue-600 dark:from-emerald-400 dark:via-sky-400 dark:to-blue-500 bg-clip-text text-transparent">SVM IT Solutions</span>.
             </h1>
-            <p className="mt-4 text-slate-300 text-xs sm:text-sm max-w-lg leading-relaxed">
+            <p className="mt-4 text-slate-600 dark:text-slate-300 text-xs sm:text-sm max-w-lg leading-relaxed">
               Custom websites, mobile apps, AI integrations, ERP/CRM, and enterprise cloud software.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -91,18 +93,18 @@ function Home() {
             </div>
 
             {/* Quick Metrics */}
-            <div className="mt-8 pt-6 border-t border-slate-800/80 grid grid-cols-3 gap-4">
+            <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800/80 grid grid-cols-3 gap-4">
               <div>
-                <p className="text-xl font-extrabold text-white">15+</p>
-                <p className="text-[11px] text-slate-400">Live Client Systems</p>
+                <p className="text-xl font-extrabold text-slate-900 dark:text-white">15+</p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400">Live Client Systems</p>
               </div>
               <div>
                 <p className="text-xl font-extrabold text-emerald-400">99.9%</p>
                 <p className="text-[11px] text-slate-400">Uptime Architecture</p>
               </div>
               <div>
-                <p className="text-xl font-extrabold text-sky-400">24/7</p>
-                <p className="text-[11px] text-slate-400">Support Included</p>
+                <p className="text-xl font-extrabold text-sky-500 dark:text-sky-400">24/7</p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400">Support Included</p>
               </div>
             </div>
           </div>
@@ -113,12 +115,15 @@ function Home() {
               src={heroImage}
               width={1280}
               height={960}
-              alt="Analytics dashboard and mobile app interface built by KL Tech Solutions"
+              alt="Analytics dashboard and mobile app interface built by SVM IT Solutions"
               className="relative w-full rounded-3xl border border-slate-800 shadow-2xl"
             />
           </div>
         </div>
       </section>
+
+      {/* Enterprise SLA & Infrastructure Ticker */}
+      <InfrastructureTicker />
 
       {/* Featured Services (8 Grid) */}
       <section className="section-y bg-background">
@@ -198,11 +203,11 @@ function Home() {
 
       {/* Process Section with Fixed Parallax Background Image */}
       <section
-        className="relative overflow-hidden py-20 text-white bg-slate-950 bg-fixed bg-cover bg-center"
+        className="relative overflow-hidden py-20 text-white bg-slate-800 dark:bg-slate-950 bg-fixed bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})`, backgroundAttachment: "fixed" }}
       >
         {/* Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm z-0" />
+        <div className="absolute inset-0 bg-slate-900/80 dark:bg-slate-950/90 backdrop-blur-sm z-0" />
 
         <div className="container-page relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -245,6 +250,13 @@ function Home() {
       </section>
 
 
+
+      {/* Interactive Project Cost & Scope Estimator */}
+      <section className="section-y bg-background">
+        <div className="container-page">
+          <ProjectCostEstimator />
+        </div>
+      </section>
 
       {/* FAQ */}
       <section className="section-y bg-slate-50 dark:bg-slate-900/50">

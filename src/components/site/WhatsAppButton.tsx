@@ -16,7 +16,7 @@ export function WhatsAppButton() {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with KLTech Solutions on WhatsApp"
+        aria-label="Chat with SVM IT Solutions on WhatsApp"
         className="fixed bottom-20 right-5 z-40 grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[var(--shadow-lift)] transition-transform hover:scale-105 sm:bottom-6"
       >
         <MessageCircle className="size-6" aria-hidden="true" />

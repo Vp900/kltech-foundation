@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { InfoNotice, PageHero } from "@/components/site/Sections";
 
-const title = "Terms & Conditions | KLTech Solutions";
-const description = "The terms governing use of the KLTech Solutions website and the delivery of our services.";
+const title = "Terms & Conditions | SVM IT Solutions";
+const description = "The terms governing use of the SVM IT Solutions website and the delivery of our services.";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/terms")({
       <section className="section-y">
         <div className="container-page max-w-3xl space-y-6 text-sm leading-relaxed text-muted-foreground">
           <InfoNotice>
-            Draft terms prepared for review. These must be reviewed and customized for KLTech Solutions&apos; actual
+            Draft terms prepared for review. These must be reviewed and customized for SVM IT Solutions&apos; actual
             contracts and jurisdiction before publication.
           </InfoNotice>
           <h2 className="font-display text-xl font-semibold text-foreground">Use of this website</h2>

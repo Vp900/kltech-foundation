@@ -1,5 +1,5 @@
 /**
- * Central content/data layer for the KLTech Solutions website.
+ * Central content/data layer for the SVM IT Solutions website.
  *
  * IMPORTANT: Every value marked with `PLACEHOLDER` must be replaced with real
  * company-supplied information before launch. No statistics, testimonials,
@@ -7,13 +7,13 @@
  */
 
 export const company = {
-  name: "KL Tech Solutions",
+  name: "SVM IT Solutions",
   tagline: "INNOVATE • DEVELOP • DELIVER",
   description:
-    "KL Tech Solutions helps businesses build high-performance custom websites, web applications, mobile apps, ERP/CRM, and AI cloud solutions.",
-  phone: "+91 98765 43210",
-  whatsapp: "+91 98765 43210",
-  email: "support@kltechsolutions.com",
+    "SVM IT Solutions helps businesses build high-performance custom websites, web applications, mobile apps, ERP/CRM, and AI cloud solutions.",
+  phone: "+91 94537 75009",
+  whatsapp: "+91 94537 75009",
+  email: "svmitsolutions26@gmail.com",
   address: "Lucknow & PAN India",
   hours: "24/7 Technical Support",
   social: {
@@ -26,7 +26,7 @@ export const company = {
 };
 
 export const whatsappMessage =
-  "Hello KLTech Solutions, I am interested in your IT services.";
+  "Hello SVM IT Solutions, I am interested in your IT services.";
 
 export type ServiceDetail = {
   slug: string;

@@ -102,7 +102,7 @@ export function SuccessModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
         </div>
 
         <div className="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-400">
-          KL Tech Solutions engineering team aapko 2 hours me contact karegi.
+          SVM IT Solutions engineering team aapko 2 hours me contact karegi.
         </div>
 
         <Button onClick={onClose} className="mt-6 w-full rounded-xl bg-emerald-500 hover:bg-emerald-600 font-bold text-white">
@@ -252,7 +252,7 @@ export function ProjectBuilder() {
         <div className="lg:col-span-5 relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl min-h-[440px] flex flex-col justify-end group">
           <img
             src={heroImage}
-            alt="KL Tech Solutions Technical Support & Engineering"
+            alt="SVM IT Solutions Technical Support & Engineering"
             className="absolute inset-0 size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/20 z-10" />
@@ -272,7 +272,7 @@ export function ProjectBuilder() {
             <div className="mt-6 pt-4 border-t border-white/20 space-y-2 text-xs text-slate-300 font-medium">
               <div className="flex items-center justify-between">
                 <span className="text-slate-400">Email:</span>
-                <span className="font-bold text-white">support@kltechsolutions.com</span>
+                <span className="font-bold text-white">svmitsolutions26@gmail.com</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-slate-400">Location:</span>

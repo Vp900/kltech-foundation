@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { InfoNotice, PageHero } from "@/components/site/Sections";
 
-const title = "Refund & Cancellation Policy | KLTech Solutions";
-const description = "How cancellations, milestones and refunds are handled on KLTech Solutions projects.";
+const title = "Refund & Cancellation Policy | SVM IT Solutions";
+const description = "How cancellations, milestones and refunds are handled on SVM IT Solutions projects.";
 
 export const Route = createFileRoute("/refund-policy")({
   head: () => ({

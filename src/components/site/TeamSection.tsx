@@ -15,19 +15,10 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: "sani-yadav",
     name: "Sani Yadav",
     role: "Founder & CEO",
-    bio: "Visionary leader driving innovation, enterprise strategy, and technology expansion at KL Tech Solutions.",
+    bio: "Visionary leader driving innovation, enterprise strategy, and technology expansion at SVM IT Solutions.",
     avatar: "/team/sani-yadav.png",
     skills: [],
     gradient: "from-blue-600 to-emerald-600",
-  },
-  {
-    id: "anurag-yadav",
-    name: "Anurag Yadav",
-    role: "Co-Founder",
-    bio: "Co-founder focusing on business growth, operational excellence, client strategy, and solution delivery.",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-    skills: [],
-    gradient: "from-emerald-600 to-teal-600",
   },
   {
     id: "mohit-verma",
@@ -60,7 +51,7 @@ export function TeamSection() {
             <span>Our Leadership & Engineering Team</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white">
-            Meet the Minds Behind KL Tech Solutions
+            Meet the Minds Behind SVM IT Solutions
           </h2>
           <p className="mt-3 text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto">
             Our passionate team of founders, architects, and senior engineers committed to turning ambitious software ideas into scalable real-world applications.
@@ -68,7 +59,7 @@ export function TeamSection() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {TEAM_MEMBERS.map((member) => (
             <div
               key={member.id}

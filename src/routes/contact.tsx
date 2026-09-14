@@ -4,9 +4,9 @@ import { LeadForm } from "@/components/site/Forms";
 import { InfoNotice, PageHero } from "@/components/site/Sections";
 import { company } from "@/data/site";
 
-const title = "Contact KLTech Solutions — Talk to Our IT Team";
+const title = "Contact SVM IT Solutions — Talk to Our IT Team";
 const description =
-  "Contact KLTech Solutions to discuss websites, mobile apps, custom software, ERP, CRM or digital marketing. Send an enquiry and our team will respond shortly.";
+  "Contact SVM IT Solutions to discuss websites, mobile apps, custom software, ERP, CRM or digital marketing. Send an enquiry and our team will respond shortly.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -38,7 +38,7 @@ function ContactPage() {
   return (
     <>
       {/* Rich 2-Column Hero Section for Contact Page */}
-      <section className="relative bg-slate-950 text-white pt-12 pb-16 lg:py-20 border-b border-slate-800 overflow-hidden">
+      <section className="relative bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-white pt-12 pb-16 lg:py-20 border-b border-slate-200 dark:border-slate-800 overflow-hidden">
         <div className="absolute top-0 right-1/4 size-96 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
         <div className="container-page relative grid lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-6 space-y-6">
@@ -46,10 +46,10 @@ function ContactPage() {
               <MessageCircle className="size-3.5" />
               <span>Get in Touch with Our Engineering Team</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white leading-tight">
               Let's Talk About Your Next Software Project
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-lg">
+            <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-lg">
               Send us your project scope or schedule a call. Our tech leads will provide a detailed technical consultation, timeline, and proposal.
             </p>
             <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -67,7 +67,7 @@ function ContactPage() {
           <div className="lg:col-span-6 relative">
             <img
               src={contactHero}
-              alt="KL Tech Customer & Technical Support Desk"
+              alt="SVM IT Customer & Technical Support Desk"
               className="w-full rounded-3xl border border-slate-800 shadow-2xl object-cover max-h-[380px]"
             />
           </div>
@@ -80,11 +80,25 @@ function ContactPage() {
             <h2 className="font-display text-xl font-bold text-slate-900 dark:text-white">Direct Contact Info</h2>
             <ul className="space-y-4">
               {details.map((d) => (
-                <li key={d.label} className="flex items-start gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm">
+                <li key={d.label} className="flex items-start gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm hover:border-emerald-500/40 transition-colors">
                   <d.icon className="mt-0.5 size-5 shrink-0 text-emerald-500" aria-hidden="true" />
                   <div>
                     <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">{d.label}</p>
-                    <p className="text-sm font-bold text-slate-900 dark:text-white mt-0.5">{d.value}</p>
+                    {d.label.includes("Phone") ? (
+                      <a href={`tel:${d.value.replace(/\s+/g, "")}`} className="text-sm font-bold text-slate-900 dark:text-white hover:text-emerald-500 transition-colors mt-0.5 block">
+                        {d.value}
+                      </a>
+                    ) : d.label.includes("WhatsApp") ? (
+                      <a href={`https://wa.me/${d.value.replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-slate-900 dark:text-white hover:text-emerald-500 transition-colors mt-0.5 block">
+                        {d.value}
+                      </a>
+                    ) : d.label.includes("Email") ? (
+                      <a href={`mailto:${d.value}`} className="text-sm font-bold text-slate-900 dark:text-white hover:text-emerald-500 transition-colors mt-0.5 block">
+                        {d.value}
+                      </a>
+                    ) : (
+                      <p className="text-sm font-bold text-slate-900 dark:text-white mt-0.5">{d.value}</p>
+                    )}
                   </div>
                 </li>
               ))}

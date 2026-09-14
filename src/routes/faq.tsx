@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CTASection, FAQAccordion, PageHero } from "@/components/site/Sections";
 import { generalFaqs } from "@/data/site";
 
-const title = "FAQ — Costs, Timelines & Support | KLTech Solutions";
+const title = "FAQ — Costs, Timelines & Support | SVM IT Solutions";
 const description =
   "Answers to common questions about website cost, development timelines, hosting, SEO, payment gateways, maintenance, ERP, CRM and post-launch support.";
 

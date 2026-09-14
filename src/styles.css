@@ -2,7 +2,7 @@
 @source "../src";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 /*
  * Design system definition.
@@ -110,6 +110,24 @@
   --shadow-card: 0 1px 2px oklch(0.203 0.036 259.5 / 0.04), 0 8px 24px oklch(0.203 0.036 259.5 / 0.06);
   --shadow-lift: 0 2px 4px oklch(0.203 0.036 259.5 / 0.06), 0 18px 40px oklch(0.203 0.036 259.5 / 0.1);
   --gradient-ink: linear-gradient(160deg, oklch(0.203 0.036 259.5), oklch(0.26 0.05 262));
+}
+
+.dark {
+  --background: oklch(0.14 0.03 260); /* #0B1220 slate-950 */
+  --foreground: oklch(0.985 0.002 247.9);
+  --card: oklch(0.17 0.035 260);
+  --card-foreground: oklch(0.985 0.002 247.9);
+  --popover: oklch(0.17 0.035 260);
+  --popover-foreground: oklch(0.985 0.002 247.9);
+  --secondary: oklch(0.22 0.035 260);
+  --secondary-foreground: oklch(0.985 0.002 247.9);
+  --muted: oklch(0.22 0.035 260);
+  --muted-foreground: oklch(0.7 0.03 256);
+  --accent: oklch(0.25 0.04 260);
+  --accent-foreground: oklch(0.985 0.002 247.9);
+  --border: oklch(0.28 0.035 259);
+  --input: oklch(0.28 0.035 259);
+  --surface: oklch(0.16 0.035 260);
 }
 
 @layer base {

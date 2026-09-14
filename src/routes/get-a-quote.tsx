@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { LeadForm } from "@/components/site/Forms";
 import { InfoNotice, PageHero } from "@/components/site/Sections";
 
-const title = "Get a Quote — Request a Project Quotation | KLTech Solutions";
+const title = "Get a Quote — Request a Project Quotation | SVM IT Solutions";
 const description =
-  "Request a detailed quotation from KLTech Solutions. Share your service requirement, budget and timeline and receive a clear scope and price.";
+  "Request a detailed quotation from SVM IT Solutions. Share your service requirement, budget and timeline and receive a clear scope and price.";
 
 export const Route = createFileRoute("/get-a-quote")({
   head: () => ({

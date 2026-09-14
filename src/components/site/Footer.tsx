@@ -19,25 +19,32 @@ export function Footer() {
   const socials = Object.entries(company.social).filter(([, url]) => url);
 
   return (
-    <footer className="bg-slate-950 text-slate-400 border-t border-slate-900">
+    <footer className="bg-slate-100 dark:bg-slate-950 text-slate-600 dark:text-slate-400 border-t border-slate-200 dark:border-slate-900">
       <div className="container-page grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-2">
-          <Logo showTagline={true} />
+          <Logo variant="auto" showTagline={true} />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
-            KL Tech Solutions delivers high-performance custom websites, enterprise web applications, mobile apps, ERP/CRM, and AI cloud solutions for businesses and global startups.
+            SVM IT Solutions delivers high-performance custom websites, enterprise web applications, mobile apps, ERP/CRM, and AI cloud solutions for businesses and global startups.
           </p>
-          <div className="mt-6 flex flex-col gap-2 text-xs text-slate-400">
+          <div className="mt-6 flex flex-col gap-2.5 text-xs text-slate-400">
             <p className="flex items-center gap-2">
-              <span className="font-semibold text-emerald-400">Location:</span> Mumbai & PAN India
+              <span className="font-semibold text-emerald-400">Phone / Support:</span>
+              <a href="tel:+919453775009" className="font-bold text-white hover:text-emerald-400 transition-colors">
+                +91 94537 75009
+              </a>
             </p>
             <p className="flex items-center gap-2">
-              <span className="font-semibold text-emerald-400">Inquiries:</span> contact@kltechsolutions.com
+              <span className="font-semibold text-emerald-400">Location:</span> Mumbai &amp; PAN India
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="font-semibold text-emerald-400">Email:</span>
+              <a href="mailto:svmitsolutions26@gmail.com" className="font-bold text-white hover:text-emerald-400 transition-colors">svmitsolutions26@gmail.com</a>
             </p>
           </div>
         </div>
 
         <nav aria-label="Company">
-          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-white">Company</h2>
+          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">Company</h2>
           <ul className="mt-4 space-y-2.5 text-sm">
             <li><Link to="/about" className="transition-colors hover:text-emerald-400">About Us</Link></li>
             <li><Link to="/portfolio" className="transition-colors hover:text-emerald-400">Our Work & Clients</Link></li>
@@ -48,7 +55,7 @@ export function Footer() {
         </nav>
 
         <nav aria-label="Services">
-          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-white">Services</h2>
+          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">Services</h2>
           <ul className="mt-4 space-y-2.5 text-sm">
             {serviceLinks.map((s) => (
               <li key={s.slug}>
@@ -66,7 +73,7 @@ export function Footer() {
 
         <div className="space-y-8">
           <nav aria-label="Resources">
-            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-white">Resources</h2>
+            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">Resources</h2>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li><Link to="/blog" className="transition-colors hover:text-emerald-400">Blog & Insights</Link></li>
               <li><Link to="/faq" className="transition-colors hover:text-emerald-400">FAQ</Link></li>
@@ -75,7 +82,7 @@ export function Footer() {
             </ul>
           </nav>
           <nav aria-label="Legal">
-            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-white">Legal</h2>
+            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">Legal</h2>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li><Link to="/privacy-policy" className="transition-colors hover:text-emerald-400">Privacy Policy</Link></li>
               <li><Link to="/terms" className="transition-colors hover:text-emerald-400">Terms &amp; Conditions</Link></li>
@@ -85,9 +92,9 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-slate-900 bg-slate-950/80">
+      <div className="border-t border-slate-200 dark:border-slate-900 bg-slate-50 dark:bg-slate-950/80">
         <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs sm:flex-row text-slate-400">
-          <p>© 2026 KL Tech Solutions. All Rights Reserved. INNOVATE • DEVELOP • DELIVER</p>
+          <p className="text-slate-600 dark:text-slate-400">© 2026 SVM IT Solutions. All Rights Reserved. INNOVATE • DEVELOP • DELIVER</p>
           <p className="text-emerald-400 font-medium">Built with Excellence</p>
         </div>
       </div>

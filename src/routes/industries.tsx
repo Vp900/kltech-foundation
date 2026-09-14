@@ -4,9 +4,9 @@ import { CTASection, PageHero } from "@/components/site/Sections";
 import { industries } from "@/data/site";
 import { ArrowRight, CheckCircle2, Building, Sparkles, Layers, Shield, Zap } from "lucide-react";
 
-const title = "Industries We Serve — Enterprise Sector Solutions | KL Tech Solutions";
+const title = "Industries We Serve — Enterprise Sector Solutions | SVM IT Solutions";
 const description =
-  "KL Tech Solutions delivers specialized software, ERP, CRM, and cloud engineering for E-Commerce, Healthcare, EdTech, Real Estate, Manufacturing, Finance, and Logistics.";
+  "SVM IT Solutions delivers specialized software, ERP, CRM, and cloud engineering for E-Commerce, Healthcare, EdTech, Real Estate, Manufacturing, Finance, and Logistics.";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -32,7 +32,7 @@ function IndustriesPage() {
   return (
     <>
       {/* Rich 2-Column Hero Section for Industries */}
-      <section className="relative bg-slate-950 text-white pt-12 pb-16 lg:py-20 border-b border-slate-800 overflow-hidden">
+      <section className="relative bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-white pt-12 pb-16 lg:py-20 border-b border-slate-200 dark:border-slate-800 overflow-hidden">
         <div className="absolute top-0 right-1/3 size-96 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
         <div className="container-page relative grid lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-6 space-y-6">
@@ -40,10 +40,10 @@ function IndustriesPage() {
               <Building className="size-3.5" />
               <span>Sector Engineering & Domain Solutions</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white leading-tight">
               Industry-Tailored Web & Enterprise Architecture
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-lg">
+            <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-lg">
               We design custom software, ERPs, CRMs, and web applications tailored specifically for Healthcare, E-Commerce, Logistics, Real Estate, and Manufacturing.
             </p>
             <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -61,7 +61,7 @@ function IndustriesPage() {
           <div className="lg:col-span-6 relative">
             <img
               src={industriesHero}
-              alt="Enterprise Industry Sectors KL Tech"
+              alt="Enterprise Industry Sectors SVM IT"
               className="w-full rounded-3xl border border-slate-800 shadow-2xl object-cover max-h-[380px]"
             />
           </div>

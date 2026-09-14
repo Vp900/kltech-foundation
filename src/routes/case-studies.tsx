@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CTASection, InfoNotice, PageHero, SectionHeading } from "@/components/site/Sections";
 
-const title = "Case Studies — Project Deep Dives | KLTech Solutions";
+const title = "Case Studies — Project Deep Dives | SVM IT Solutions";
 const description =
-  "Detailed KLTech Solutions case studies covering client requirements, challenges, strategy, solution, technologies and outcomes.";
+  "Detailed SVM IT Solutions case studies covering client requirements, challenges, strategy, solution, technologies and outcomes.";
 
 export const Route = createFileRoute("/case-studies")({
   head: () => ({

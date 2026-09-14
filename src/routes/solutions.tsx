@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CTASection, PageHero, ServiceCard } from "@/components/site/Sections";
 import { services } from "@/data/site";
 
-const title = "Business Solutions — ERP, CRM, Automation & Cloud | KLTech Solutions";
+const title = "Business Solutions — ERP, CRM, Automation & Cloud | SVM IT Solutions";
 const description =
-  "Operational solutions from KLTech Solutions: ERP systems, CRM platforms, business automation, cloud hosting and IT consulting.";
+  "Operational solutions from SVM IT Solutions: ERP systems, CRM platforms, business automation, cloud hosting and IT consulting.";
 
 const solutionSlugs = ["erp-solutions", "crm-solutions", "business-automation", "cloud-hosting", "it-consulting"];
 

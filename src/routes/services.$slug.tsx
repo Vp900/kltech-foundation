@@ -74,9 +74,9 @@ export const Route = createFileRoute("/services/$slug")({
   },
   head: ({ params, loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Service not found — KL Tech Solutions" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Service not found — SVM IT Solutions" }, { name: "robots", content: "noindex" }] };
     }
-    const t = `${loaderData.service.title} | KL Tech Solutions`;
+    const t = `${loaderData.service.title} | SVM IT Solutions`;
     const d = loaderData.service.intro.slice(0, 155);
     return {
       meta: [
@@ -96,7 +96,7 @@ export const Route = createFileRoute("/services/$slug")({
             "@type": "Service",
             name: loaderData.service.name,
             description: loaderData.service.intro,
-            provider: { "@type": "Organization", name: "KL Tech Solutions" },
+            provider: { "@type": "Organization", name: "SVM IT Solutions" },
           }),
         },
       ],
@@ -765,7 +765,7 @@ function ERPLayout({ service, heroImage }: { service: ServiceDetail; heroImage: 
               Business Transformation
             </span>
             <h2 className="text-3xl font-extrabold font-display text-white mt-2">
-              Manual Spreadsheets vs KL Tech ERP
+              Manual Spreadsheets vs SVM IT ERP
             </h2>
           </div>
 
@@ -786,7 +786,7 @@ function ERPLayout({ service, heroImage }: { service: ServiceDetail; heroImage: 
             </div>
 
             <div className="p-6 rounded-3xl bg-slate-900 border border-emerald-500/30 space-y-4 relative shadow-lg shadow-emerald-500/5">
-              <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">After: KL Tech Custom ERP</span>
+              <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">After: SVM IT Custom ERP</span>
               <ul className="space-y-3 text-xs sm:text-sm text-slate-200">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="size-4 text-emerald-400 shrink-0 mt-0.5" /> 100% centralized database with role-based access control

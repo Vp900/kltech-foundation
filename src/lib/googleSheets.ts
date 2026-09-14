@@ -43,7 +43,7 @@ export async function submitToGoogleSheet(data: ContactFormData): Promise<{ succ
   // Google Apps Script Webhook URL
   const webhookUrl =
     (import.meta.env && (import.meta.env["VITE_GOOGLE_SHEET_WEBHOOK_URL"] as string)) ||
-    "https://script.google.com/macros/s/AKfycbz_default_kts_sheet_webhook/exec";
+    "https://script.google.com/macros/s/AKfycbz_default_svm_sheet_webhook/exec";
 
   try {
     // We send payload as JSON / text/plain to avoid CORS pre-flight blocks in Apps Script
@@ -55,7 +55,7 @@ export async function submitToGoogleSheet(data: ContactFormData): Promise<{ succ
       body: JSON.stringify({
         ...data,
         timestamp: new Date().toISOString(),
-        source: "KL Tech Solutions Contact Form",
+        source: "SVM IT Solutions Contact Form",
       }),
       mode: "no-cors", // Google Apps Script redirects no-cors requests safely
     });
@@ -73,3 +73,23 @@ export async function submitToGoogleSheet(data: ContactFormData): Promise<{ succ
     };
   }
 }
+
+export const submitLeadToGoogleSheet = async (data: {
+  fullName?: string;
+  name?: string;
+  email: string;
+  phone?: string;
+  service?: string;
+  budget?: string;
+  message: string;
+}) => {
+  return submitToGoogleSheet({
+    name: data.fullName || data.name || "Lead",
+    email: data.email,
+    phone: data.phone,
+    service: data.service,
+    budget: data.budget,
+    message: data.message,
+  });
+};
+

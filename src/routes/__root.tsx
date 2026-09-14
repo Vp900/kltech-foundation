@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { QuickContactWidget } from "@/components/site/QuickContactWidget";
 
 function NotFoundComponent() {
   return (
@@ -76,14 +76,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "KLTech Solutions — IT Services, Software & Web Development Company" },
-      { name: "description", content: "KLTech Solutions builds websites, web applications, mobile apps, ERP, CRM and custom software for businesses." },
-      { name: "author", content: "KLTech Solutions" },
-      { property: "og:title", content: "KLTech Solutions" },
+      { title: "SVM IT Solutions — IT Services, Software & Web Development Company" },
+      { name: "description", content: "SVM IT Solutions builds websites, web applications, mobile apps, ERP, CRM and custom software for businesses." },
+      { name: "author", content: "SVM IT Solutions" },
+      { property: "og:title", content: "SVM IT Solutions" },
       { property: "og:description", content: "IT services, software and web development company." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:site_name", content: "KLTech Solutions" },
+      { property: "og:site_name", content: "SVM IT Solutions" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -96,7 +96,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/kts-logo.jpg", type: "image/jpeg" },
+      { rel: "icon", href: "/lightlogo.jpeg", type: "image/jpeg", media: "(prefers-color-scheme: light)" },
+      { rel: "icon", href: "/darklogo.jpeg", type: "image/jpeg", media: "(prefers-color-scheme: dark)" },
+      { rel: "icon", href: "/darklogo.jpeg", type: "image/jpeg" },
     ],
   }),
   shellComponent: RootShell,
@@ -107,8 +109,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d)){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}}catch(e){}})();`,
+          }}
+        />
         <HeadContent />
       </head>
       <body>
@@ -131,7 +138,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
-        <WhatsAppButton />
+        <QuickContactWidget />
       </div>
     </QueryClientProvider>
   );

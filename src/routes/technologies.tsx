@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CTASection, PageHero } from "@/components/site/Sections";
 import { TechStack } from "@/components/site/TechStack";
 
-const title = "Technology Stack & Software Tools — KL Tech Solutions";
+const title = "Technology Stack & Software Tools — SVM IT Solutions";
 const description =
-  "Discover the engineering technologies, programming languages (Java, Python, Django, React, Angular, TypeScript, Node.js), databases, cloud infra, and development software used by KL Tech Solutions.";
+  "Discover the engineering technologies, programming languages (Java, Python, Django, React, Angular, TypeScript, Node.js), databases, cloud infra, and development software used by SVM IT Solutions.";
 
 export const Route = createFileRoute("/technologies")({
   head: () => ({
@@ -28,7 +28,7 @@ function TechnologiesPage() {
   return (
     <>
       {/* Rich 2-Column Hero Section for Technologies */}
-      <section className="relative bg-slate-950 text-white pt-12 pb-16 lg:py-20 border-b border-slate-800 overflow-hidden">
+      <section className="relative bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-white pt-12 pb-16 lg:py-20 border-b border-slate-200 dark:border-slate-800 overflow-hidden">
         <div className="absolute top-0 left-1/3 size-96 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
         <div className="container-page relative grid lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-6 space-y-6">
@@ -36,10 +36,10 @@ function TechnologiesPage() {
               <Cpu className="size-3.5" />
               <span>Technology Stack & Software Tools</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white leading-tight">
               Enterprise Languages, Frameworks & Cloud Architecture
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-lg">
+            <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-lg">
               We engineer custom applications using modern React, Node.js, Python, Java, Docker, AWS, and modern databases built for speed and security.
             </p>
             <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -57,7 +57,7 @@ function TechnologiesPage() {
           <div className="lg:col-span-6 relative">
             <img
               src={technologiesHero}
-              alt="KL Tech Engineering Tech Stack"
+              alt="SVM IT Engineering Tech Stack"
               className="w-full rounded-3xl border border-slate-800 shadow-2xl object-cover max-h-[380px]"
             />
           </div>

@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { InfoNotice, PageHero } from "@/components/site/Sections";
 
-const title = "Privacy Policy | KLTech Solutions";
-const description = "How KLTech Solutions collects, uses and protects personal information submitted through this website.";
+const title = "Privacy Policy | SVM IT Solutions";
+const description = "How SVM IT Solutions collects, uses and protects personal information submitted through this website.";
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/privacy-policy")({
         <div className="container-page max-w-3xl space-y-6 text-sm leading-relaxed text-muted-foreground">
           <InfoNotice>
             This is draft policy text prepared for review. It is not legal advice and must be reviewed and customized
-            for KLTech Solutions&apos; actual business, jurisdiction and data practices before publication.
+            for SVM IT Solutions&apos; actual business, jurisdiction and data practices before publication.
           </InfoNotice>
           <h2 className="font-display text-xl font-semibold text-foreground">Information we collect</h2>
           <p>We collect the details you submit through our contact and quotation forms: name, email address, phone number, company name, service interest, budget range and your project description.</p>

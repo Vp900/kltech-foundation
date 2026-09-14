@@ -4,9 +4,9 @@ import { CTASection, PageHero } from "@/components/site/Sections";
 import { CLIENT_PROJECTS } from "@/data/clients";
 import { ExternalLink, Layers, Sparkles } from "lucide-react";
 
-const title = "Our Work & Client Portfolio — KL Tech Solutions";
+const title = "Our Work & Client Portfolio — SVM IT Solutions";
 const description =
-  "Explore the KL Tech Solutions client portfolio featuring 15+ live web applications, e-commerce stores, CPaaS AI platforms, edtech solutions, and enterprise industrial websites.";
+  "Explore the SVM IT Solutions client portfolio featuring 15+ live web applications, e-commerce stores, CPaaS AI platforms, edtech solutions, and enterprise industrial websites.";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -46,7 +46,7 @@ function PortfolioPage() {
   return (
     <>
       {/* Rich 2-Column Hero Section for Portfolio / Our Work */}
-      <section className="relative bg-slate-950 text-white pt-12 pb-16 lg:py-20 border-b border-slate-800 overflow-hidden">
+      <section className="relative bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-white pt-12 pb-16 lg:py-20 border-b border-slate-200 dark:border-slate-800 overflow-hidden">
         <div className="absolute top-0 right-1/4 size-96 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
         <div className="container-page relative grid lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-6 space-y-6">
@@ -54,11 +54,11 @@ function PortfolioPage() {
               <Sparkles className="size-3.5" />
               <span>Our Work & Client Showcase</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white leading-tight">
               Live Client Ecosystems & Software Portfolio
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-lg">
-              Explore 15+ live production web applications, e-commerce stores, CPaaS platforms, and enterprise solutions built by KL Tech Solutions.
+            <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-lg">
+              Explore 15+ live production web applications, e-commerce stores, CPaaS platforms, and enterprise solutions built by SVM IT Solutions.
             </p>
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <div className="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-emerald-400 flex items-center gap-2">
@@ -75,7 +75,7 @@ function PortfolioPage() {
           <div className="lg:col-span-6 relative">
             <img
               src={portfolioHero}
-              alt="KL Tech Client Portfolio Showcase"
+              alt="SVM IT Client Portfolio Showcase"
               className="w-full rounded-3xl border border-slate-800 shadow-2xl object-cover max-h-[380px]"
             />
           </div>

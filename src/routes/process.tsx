@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CTASection, PageHero } from "@/components/site/Sections";
 import { processSteps } from "@/data/site";
 
-const title = "Our Development Process — Discovery to Support | KLTech Solutions";
+const title = "Our Development Process — Discovery to Support | SVM IT Solutions";
 const description =
-  "How KLTech Solutions delivers projects: discovery, planning, UI/UX design, development, testing, launch and ongoing support.";
+  "How SVM IT Solutions delivers projects: discovery, planning, UI/UX design, development, testing, launch and ongoing support.";
 
 export const Route = createFileRoute("/process")({
   head: () => ({

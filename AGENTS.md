@@ -1,2 +1,2 @@
-# KL Tech Solutions Foundation Project Guidelines
+# SVM IT Solutions Foundation Project Guidelines
 

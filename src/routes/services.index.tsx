@@ -5,9 +5,9 @@ import { CTASection, ServiceCard } from "@/components/site/Sections";
 import { services } from "@/data/site";
 import servicesDashboard from "@/assets/services-dashboard.jpg";
 
-const title = "Enterprise IT Services — Web, Mobile, Software & Cloud | KL Tech Solutions";
+const title = "Enterprise IT Services — Web, Mobile, Software & Cloud | SVM IT Solutions";
 const description =
-  "Explore KL Tech Solutions services: web development, e-commerce, mobile apps, custom software, ERP, CRM, UI/UX, SEO, and cloud engineering.";
+  "Explore SVM IT Solutions services: web development, e-commerce, mobile apps, custom software, ERP, CRM, UI/UX, SEO, and cloud engineering.";
 
 export const Route = createFileRoute("/services/")({
   head: () => ({
@@ -28,7 +28,7 @@ function ServicesIndex() {
   return (
     <>
       {/* Compact 2-Column Hero Section with Image */}
-      <section className="relative overflow-hidden bg-slate-950 text-white py-12 lg:py-16">
+      <section className="relative overflow-hidden bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-white py-12 lg:py-16">
         <div className="absolute top-0 right-0 size-[28rem] rounded-full bg-emerald-500/15 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 size-[28rem] rounded-full bg-sky-500/15 blur-3xl pointer-events-none" />
 
@@ -36,12 +36,12 @@ function ServicesIndex() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-400 mb-3">
               <Sparkles className="size-3.5" />
-              <span>KL Tech Solutions Services</span>
+              <span>SVM IT Solutions Services</span>
             </div>
-            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight font-display">
-              Complete Engineering & <span className="bg-gradient-to-r from-emerald-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">IT Services</span>
+            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight font-display">
+              Complete Engineering & <span className="bg-gradient-to-r from-emerald-600 via-sky-500 to-blue-600 dark:from-emerald-400 dark:via-sky-400 dark:to-blue-500 bg-clip-text text-transparent">IT Services</span>
             </h1>
-            <p className="mt-3 text-slate-300 text-xs sm:text-sm max-w-lg leading-relaxed">
+            <p className="mt-3 text-slate-600 dark:text-slate-300 text-xs sm:text-sm max-w-lg leading-relaxed">
               Full-spectrum digital services from websites and mobile apps to ERP, CRM, and enterprise cloud engineering.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -51,7 +51,7 @@ function ServicesIndex() {
                 </Link>
               </Button>
             </div>
-            <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-slate-300 font-medium border-t border-slate-800/80 pt-5">
+            <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-slate-600 dark:text-slate-300 font-medium border-t border-slate-200 dark:border-slate-800/80 pt-5">
               <div className="flex items-center gap-1.5">
                 <span className="size-2 rounded-full bg-emerald-400" />
                 <span>Web & Mobile Apps</span>
@@ -73,7 +73,7 @@ function ServicesIndex() {
               src={servicesDashboard}
               width={1280}
               height={720}
-              alt="KL Tech Solutions engineering services overview dashboard"
+              alt="SVM IT Solutions engineering services overview dashboard"
               className="relative w-full rounded-3xl border border-slate-800 shadow-2xl object-cover"
             />
           </div>

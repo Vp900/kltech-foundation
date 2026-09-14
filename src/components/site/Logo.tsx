@@ -1,10 +1,12 @@
+import { cn } from "@/lib/utils";
+
 export function Logo({
-  variant = "light",
+  variant = "auto",
   showTagline = false,
   className = "",
   size = "md",
 }: {
-  variant?: "light" | "dark";
+  variant?: "light" | "dark" | "auto";
   showTagline?: boolean;
   className?: string;
   size?: "sm" | "md" | "lg";
@@ -17,14 +19,47 @@ export function Logo({
       : "h-11 sm:h-12";
 
   return (
-    <div className={`inline-flex items-center gap-2 group ${className}`}>
-      <img
-        src="/kts-logo.jpg"
-        alt="KL Tech Solutions Logo"
-        className={`${heightClass} w-auto object-contain rounded-xl shadow-md ring-1 ring-slate-900/10 transition-transform duration-300 group-hover:scale-105`}
-      />
+    <div className={cn("inline-flex items-center gap-2 group", className)}>
+      {variant === "light" ? (
+        <img
+          src="/lightlogo.jpeg"
+          alt="SVM IT Solutions Logo"
+          className={cn(
+            heightClass,
+            "w-auto object-contain rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105"
+          )}
+        />
+      ) : variant === "dark" ? (
+        <img
+          src="/darklogo.jpeg"
+          alt="SVM IT Solutions Logo"
+          className={cn(
+            heightClass,
+            "w-auto object-contain rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105"
+          )}
+        />
+      ) : (
+        <>
+          {/* Light Mode Logo (Visible in light mode, hidden in dark mode) */}
+          <img
+            src="/lightlogo.jpeg"
+            alt="SVM IT Solutions Logo"
+            className={cn(
+              heightClass,
+              "w-auto object-contain rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105 dark:hidden inline-block"
+            )}
+          />
+          {/* Dark Mode Logo (Hidden in light mode, visible in dark mode) */}
+          <img
+            src="/darklogo.jpeg"
+            alt="SVM IT Solutions Logo"
+            className={cn(
+              heightClass,
+              "w-auto object-contain rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105 hidden dark:inline-block"
+            )}
+          />
+        </>
+      )}
     </div>
   );
 }
-
-

@@ -2,9 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { CTASection, InfoNotice, PageHero } from "@/components/site/Sections";
 
-const title = "Pricing — Request a Custom Quote | KLTech Solutions";
+const title = "Pricing — Request a Custom Quote | SVM IT Solutions";
 const description =
-  "KLTech Solutions pricing is scoped per project. Share your requirement and receive a written custom quotation with clear inclusions.";
+  "SVM IT Solutions pricing is scoped per project. Share your requirement and receive a written custom quotation with clear inclusions.";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({

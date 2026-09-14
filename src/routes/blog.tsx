@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CTASection, InfoNotice, PageHero } from "@/components/site/Sections";
 import { blogPosts } from "@/data/site";
 
-const title = "Resources & Blog — Business Technology Insights | KLTech Solutions";
+const title = "Resources & Blog — Business Technology Insights | SVM IT Solutions";
 const description =
-  "Practical articles on web development, e-commerce, SEO, mobile apps, software and business automation from the KLTech Solutions team.";
+  "Practical articles on web development, e-commerce, SEO, mobile apps, software and business automation from the SVM IT Solutions team.";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({

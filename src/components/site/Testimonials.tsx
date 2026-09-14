@@ -11,13 +11,13 @@ export const QUOTE_REVIEWS: QuoteTestimonial[] = [
   {
     id: "q1",
     quote:
-      "KL Tech Solutions transformed our CPaaS infrastructure. Their team delivered ultra-low latency queue messaging handling 100k+ daily events with 100% reliability.",
+      "SVM IT Solutions transformed our CPaaS infrastructure. Their team delivered ultra-low latency queue messaging handling 100k+ daily events with 100% reliability.",
     rating: 5,
   },
   {
     id: "q2",
     quote:
-      "The Next.js fashion storefront designed by KL Tech Solutions increased our mobile conversion rate by 45%. Lightning fast load times and stunning UI aesthetic!",
+      "The Next.js fashion storefront designed by SVM IT Solutions increased our mobile conversion rate by 45%. Lightning fast load times and stunning UI aesthetic!",
     rating: 5,
   },
   {

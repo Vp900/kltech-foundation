@@ -5,9 +5,9 @@ import { whyChooseUs } from "@/data/site";
 import heroImage from "@/assets/hero-dashboard.jpg";
 import { Sparkles } from "lucide-react";
 
-const title = "About KL Tech Solutions — Our Mission, Leadership & Engineering Team";
+const title = "About SVM IT Solutions — Our Mission, Leadership & Engineering Team";
 const description =
-  "Learn about KL Tech Solutions: our founders, executive leadership team, engineering talent, mission, vision, and core values.";
+  "Learn about SVM IT Solutions: our founders, executive leadership team, engineering talent, mission, vision, and core values.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -43,7 +43,7 @@ function AboutPage() {
   return (
     <>
       {/* Reduced Height 2-Column Hero Section with Image */}
-      <section className="relative overflow-hidden bg-slate-950 text-white py-12 lg:py-16">
+      <section className="relative overflow-hidden bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-white py-12 lg:py-16">
         <div className="absolute top-0 right-0 size-[28rem] rounded-full bg-emerald-500/15 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 size-[28rem] rounded-full bg-sky-500/15 blur-3xl pointer-events-none" />
 
@@ -51,15 +51,15 @@ function AboutPage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-400 mb-3">
               <Sparkles className="size-3.5" />
-              <span>About KL Tech Solutions</span>
+              <span>About SVM IT Solutions</span>
             </div>
-            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight font-display">
-              A Technology Partner Dedicated to <span className="bg-gradient-to-r from-emerald-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">Innovation</span>
+            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight font-display">
+              A Technology Partner Dedicated to <span className="bg-gradient-to-r from-emerald-600 via-sky-400 to-blue-600 dark:from-emerald-400 dark:via-sky-400 dark:to-blue-500 bg-clip-text text-transparent">Innovation</span>
             </h1>
-            <p className="mt-3 text-slate-300 text-xs sm:text-sm max-w-lg leading-relaxed">
-              KL Tech Solutions builds high-performance web applications, cloud systems, and custom software with a focus on clarity, scale, and long-term security.
+            <p className="mt-3 text-slate-600 dark:text-slate-300 text-xs sm:text-sm max-w-lg leading-relaxed">
+              SVM IT Solutions builds high-performance web applications, cloud systems, and custom software with a focus on clarity, scale, and long-term security.
             </p>
-            <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-slate-300 font-medium border-t border-slate-800/80 pt-5">
+            <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-slate-600 dark:text-slate-300 font-medium border-t border-slate-200 dark:border-slate-800/80 pt-5">
               <div className="flex items-center gap-1.5">
                 <span className="size-2 rounded-full bg-emerald-400" />
                 <span>100% Transparency</span>
@@ -81,7 +81,7 @@ function AboutPage() {
               src={heroImage}
               width={1280}
               height={960}
-              alt="KL Tech Solutions engineering and software development team dashboard"
+              alt="SVM IT Solutions engineering and software development team dashboard"
               className="relative w-full rounded-3xl border border-slate-800 shadow-2xl object-cover"
             />
           </div>
@@ -123,7 +123,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <CTASection title="Partner with KL Tech Solutions" text="Tell us about your business goals and we will present a tailored tech strategy." primaryLabel="Get a Free Quote" secondaryLabel="Contact Us" />
+      <CTASection title="Partner with SVM IT Solutions" text="Tell us about your business goals and we will present a tailored tech strategy." primaryLabel="Get a Free Quote" secondaryLabel="Contact Us" />
     </>
   );
 }
