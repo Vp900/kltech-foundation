@@ -5,7 +5,6 @@ import { services } from "@/data/site";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
-import { CommandPalette } from "./CommandPalette";
 import { cn } from "@/lib/utils";
 
 const solutionSlugs = ["erp-solutions", "crm-solutions", "business-automation", "cloud-hosting", "it-consulting"];
@@ -128,7 +127,6 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:flex lg:items-center lg:gap-3">
-          <CommandPalette />
           <ThemeToggle />
           <Button asChild size="lg" className="rounded-xl bg-emerald-500 hover:bg-emerald-600 font-bold text-white shadow-md">
             <Link to="/contact">Get Free Quote</Link>
@@ -136,7 +134,6 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <CommandPalette />
           <ThemeToggle />
           <button
             type="button"
