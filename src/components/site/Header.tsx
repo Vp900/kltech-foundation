@@ -67,6 +67,8 @@ function DropdownNav({ label, slugs }: { label: string; slugs: string[] }) {
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -76,7 +78,11 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
     return () => {
       document.body.style.overflow = "";
     };
@@ -85,17 +91,25 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-all duration-300",
-        scrolled
+        "sticky top-0 z-50 transition-colors duration-200",
+        open
+          ? "border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950"
+          : scrolled
           ? "border-b border-slate-200/80 bg-white/95 shadow-sm backdrop-blur-md dark:border-slate-800/80 dark:bg-slate-950/95 dark:shadow-lg"
           : "border-b border-slate-200/40 bg-white/80 backdrop-blur-sm dark:border-white/5 dark:bg-slate-950/80",
       )}
     >
-      <div className="container-page flex h-16 items-center justify-between gap-4 md:h-[72px]">
-        <Link to="/" className="shrink-0" aria-label="SVM IT Solutions home">
-          <Logo />
+      <div className="container-page flex h-16 items-center justify-between gap-3 md:h-[72px]">
+        {/* Brand Logo & Name */}
+        <Link to="/" className="shrink-0 flex items-center gap-2 sm:gap-2.5 group" aria-label="SVM IT Solutions home">
+          <Logo size="sm" className="sm:hidden" />
+          <Logo size="md" className="hidden sm:inline-flex" />
+          <span className="font-display font-extrabold text-base sm:text-lg md:text-xl tracking-tight text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors">
+            SVM IT Solutions
+          </span>
         </Link>
 
+        {/* Desktop Navigation */}
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
           <Link
             to="/"
@@ -126,6 +140,7 @@ export function Header() {
           ))}
         </nav>
 
+        {/* Desktop Right Actions */}
         <div className="hidden lg:flex lg:items-center lg:gap-3">
           <ThemeToggle />
           <Button asChild size="lg" className="rounded-xl bg-emerald-500 hover:bg-emerald-600 font-bold text-white shadow-md">
@@ -133,51 +148,131 @@ export function Header() {
           </Button>
         </div>
 
+        {/* Mobile Right Actions & Hamburger */}
         <div className="flex items-center gap-2 lg:hidden">
           <ThemeToggle />
           <button
             type="button"
-            onClick={() => setOpen((v) => !v)}
-            className="inline-flex size-10 items-center justify-center rounded-lg border border-slate-200 dark:border-white/15 text-slate-700 dark:text-slate-200"
+            onClick={() => setOpen((prev) => !prev)}
+            className="relative z-50 inline-flex size-10 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-200 active:scale-90 transition-transform touch-manipulation cursor-pointer"
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
           >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            {open ? <X className="size-5 text-emerald-500" /> : <Menu className="size-5" />}
           </button>
         </div>
       </div>
 
-      {open ? (
-        <div className="fixed inset-0 top-16 z-50 overflow-y-auto bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl lg:hidden">
-          <nav className="container-page flex flex-col gap-1 py-6" aria-label="Mobile navigation">
-            {[
-              { to: "/", label: "Home" },
-              { to: "/about", label: "About Us" },
-              { to: "/services", label: "Services" },
-              { to: "/solutions", label: "Solutions" },
-              { to: "/portfolio", label: "Our Work & Clients" },
-              { to: "/technologies", label: "Technologies" },
-              { to: "/industries", label: "Industries" },
-              { to: "/contact", label: "Contact" },
-            ].map((l) => (
+      {/* Mobile Drawer Navigation */}
+      {open && (
+        <div
+          className="fixed inset-x-0 top-16 bottom-0 z-50 overflow-y-auto bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 shadow-2xl lg:hidden"
+          style={{ height: "calc(100dvh - 4rem)" }}
+        >
+          <nav className="container-page flex flex-col gap-1.5 py-5 pb-32" aria-label="Mobile navigation">
+            <Link
+              to="/"
+              onClick={() => setOpen(false)}
+              className="rounded-xl px-3.5 py-2.5 text-base font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors"
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              onClick={() => setOpen(false)}
+              className="rounded-xl px-3.5 py-2.5 text-base font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors"
+            >
+              About Us
+            </Link>
+
+            {/* Mobile Services Accordion */}
+            <div className="rounded-xl border border-slate-200/80 dark:border-slate-800/80 overflow-hidden bg-slate-50/60 dark:bg-slate-900/40">
+              <button
+                type="button"
+                onClick={() => setServicesOpen((v) => !v)}
+                className="w-full flex items-center justify-between px-3.5 py-2.5 text-base font-semibold text-slate-800 dark:text-slate-200 cursor-pointer touch-manipulation"
+              >
+                <span>Services</span>
+                <ChevronDown className={cn("size-4 text-slate-500 transition-transform duration-200", servicesOpen && "rotate-180")} />
+              </button>
+              {servicesOpen && (
+                <div className="px-3 pb-3 pt-1 flex flex-col gap-1 border-t border-slate-200/60 dark:border-slate-800/60">
+                  {serviceSlugs.map((slug) => {
+                    const item = services.find((s) => s.slug === slug);
+                    if (!item) return null;
+                    return (
+                      <Link
+                        key={slug}
+                        to="/services/$slug"
+                        params={{ slug }}
+                        onClick={() => setOpen(false)}
+                        className="rounded-lg px-2.5 py-1.5 text-sm text-slate-600 dark:text-slate-300 hover:text-emerald-500 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    );
+                  })}
+                  <Link
+                    to="/services"
+                    onClick={() => setOpen(false)}
+                    className="rounded-lg px-2.5 py-1.5 text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:underline"
+                  >
+                    View all services →
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Mobile Solutions Accordion */}
+            <div className="rounded-xl border border-slate-200/80 dark:border-slate-800/80 overflow-hidden bg-slate-50/60 dark:bg-slate-900/40">
+              <button
+                type="button"
+                onClick={() => setSolutionsOpen((v) => !v)}
+                className="w-full flex items-center justify-between px-3.5 py-2.5 text-base font-semibold text-slate-800 dark:text-slate-200 cursor-pointer touch-manipulation"
+              >
+                <span>Solutions</span>
+                <ChevronDown className={cn("size-4 text-slate-500 transition-transform duration-200", solutionsOpen && "rotate-180")} />
+              </button>
+              {solutionsOpen && (
+                <div className="px-3 pb-3 pt-1 flex flex-col gap-1 border-t border-slate-200/60 dark:border-slate-800/60">
+                  {solutionSlugs.map((slug) => {
+                    const item = services.find((s) => s.slug === slug);
+                    if (!item) return null;
+                    return (
+                      <Link
+                        key={slug}
+                        to="/services/$slug"
+                        params={{ slug }}
+                        onClick={() => setOpen(false)}
+                        className="rounded-lg px-2.5 py-1.5 text-sm text-slate-600 dark:text-slate-300 hover:text-emerald-500 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            {primaryLinks.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-base font-medium text-slate-700 dark:text-slate-300 transition-colors hover:bg-slate-100 dark:hover:bg-white/5 hover:text-emerald-600 dark:hover:text-emerald-400"
+                className="rounded-xl px-3.5 py-2.5 text-base font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors"
               >
                 {l.label}
               </Link>
             ))}
-            <Button asChild size="lg" className="mt-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 font-bold text-white">
+
+            <Button asChild size="lg" className="mt-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 font-bold text-white shadow-md">
               <Link to="/contact" onClick={() => setOpen(false)}>
                 Get Free Quote
               </Link>
             </Button>
           </nav>
         </div>
-      ) : null}
-
+      )}
     </header>
   );
 }

@@ -201,13 +201,13 @@ function Home() {
         </div>
       </section>
 
-      {/* Process Section with Fixed Parallax Background Image */}
+      {/* Process Section with Background Image */}
       <section
-        className="relative overflow-hidden py-20 text-white bg-slate-800 dark:bg-slate-950 bg-fixed bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})`, backgroundAttachment: "fixed" }}
+        className="relative overflow-hidden py-20 text-white bg-slate-800 dark:bg-slate-950 bg-cover bg-center md:bg-fixed"
+        style={{ backgroundImage: `url(${heroImage})` }}
       >
         {/* Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-slate-900/80 dark:bg-slate-950/90 backdrop-blur-sm z-0" />
+        <div className="absolute inset-0 bg-slate-900/85 dark:bg-slate-950/90 z-0" />
 
         <div className="container-page relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-14">
